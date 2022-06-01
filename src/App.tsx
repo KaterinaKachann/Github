@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { sortAndDeduplicateDiagnostics } from "typescript";
 import { GlobalStyle } from "./GlobalStyle.style";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
         setData(nameRep);
       });
   }, []);
-  console.log(data);
+
   return (
     <div>
       <GlobalStyle />
