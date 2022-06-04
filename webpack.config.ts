@@ -14,7 +14,7 @@ interface Configuration extends WebpackConfiguration {
 
 type CLIValues = boolean | string;
 type EnvValues = Record<string, CLIValues | Record<string, Env>>;
-interface Env extends EnvValues {}
+interface Env extends EnvValues { }
 type Argv = Record<string, CLIValues>;
 interface WebpackConfigurationGenerator {
   (env?: Env, argv?: Argv): Configuration;
@@ -69,16 +69,11 @@ const generateConfig: WebpackConfigurationGenerator = (env, argv) => {
       }),
     ],
     devServer: {
-      // allowedHosts: [
-      //   'github.com'
-      // ],
-      // headers: { 
-      //   "Access-Control-Allow-Origin": "*",
-      //   'X-Custom-Foo': 'bar',
-      //   'Access-Control-Allow-Methods': "OPTIONS, POST, GET",
-      //   "Access-Control-Allow-Credentials": "true",
-      //   'Access-Control-Allow-Headers': "Content-Type",
-      // },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization, Content-Type"
+      },
       static: {
         directory: path.join(__dirname, './src/assets'),
       },
