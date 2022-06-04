@@ -69,6 +69,16 @@ const generateConfig: WebpackConfigurationGenerator = (env, argv) => {
       }),
     ],
     devServer: {
+      // allowedHosts: [
+      //   'github.com'
+      // ],
+      // headers: { 
+      //   "Access-Control-Allow-Origin": "*",
+      //   'X-Custom-Foo': 'bar',
+      //   'Access-Control-Allow-Methods': "OPTIONS, POST, GET",
+      //   "Access-Control-Allow-Credentials": "true",
+      //   'Access-Control-Allow-Headers': "Content-Type",
+      // },
       static: {
         directory: path.join(__dirname, './src/assets'),
       },
