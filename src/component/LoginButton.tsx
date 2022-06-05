@@ -23,7 +23,9 @@ function LoginButton() {
 
       const code = newUrl[1];
 
-      fetch(`http://localhost:8000?code=${code}`).then((res) => console.log(res.json()));
+      fetch(`http://localhost:8000?code=${code}`)
+      .then((res) => res.json())
+      .then((json) => localStorage.setItem('token', json.access_token))
     }
   });
   return (
