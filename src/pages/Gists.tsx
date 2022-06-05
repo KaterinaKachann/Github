@@ -1,19 +1,16 @@
 import React, { useState } from "react";
+import GitService from '../service/githib';
+
 
 function Gists() {
-  let access_token = "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";
   let url = "https://api.github.com/gists";
 
-  const [gist, setGist] = useState('')
-  fetch(url, {
-    method: "GET",
-    headers: {
-      Authorization: `token ${access_token}`,
-    },
-  })
+//   const [gist, setGist] = useState('')
+
+  GitService.get(url)
     .then((resp) => resp.json())
     .then((json) => {
-        console.log(json[0].files)
+        console.log(json)
     });
 
   return <div>gist</div>;

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { GlobalStyle } from "../GlobalStyle.style";
+import GitService from '../service/githib';
 
 function Repo() {
   const [data, setData] = useState([]);
   
   useEffect(() => {
     let url = "https://api.github.com/user/repos";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: "token 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",
-      },
-    })
+    GitService.get(url)
       .then((res) => res.json())
       .then((json) => {
         const nameRep: any = [];
