@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { GlobalStyle } from "../GlobalStyle.style";
 
-function Login() {
+function Repo() {
   const [data, setData] = useState([]);
+  
   useEffect(() => {
     let url = "https://api.github.com/user/repos";
     fetch(url, {
@@ -13,7 +14,6 @@ function Login() {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         const nameRep: any = [];
         json.forEach((item: any) => nameRep.push(item.name));
         setData(nameRep);
@@ -21,7 +21,6 @@ function Login() {
   }, []);
 
   return (
-      
     <div>
       <GlobalStyle />
       <table style={{ margin: "0 auto" }}>
@@ -37,5 +36,4 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
+export default Repo;
