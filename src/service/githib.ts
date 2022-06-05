@@ -1,4 +1,3 @@
-const token: string | "" = localStorage.getItem("token");
 
 class GitService {
   
@@ -6,7 +5,7 @@ class GitService {
         return fetch(url, {
                 method: "GET",
                 headers: {
-                  Authorization: `token ${token}`,
+                  Authorization: `token ${localStorage.getItem("token")}`,
                 },
               })
     }
