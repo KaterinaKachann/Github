@@ -1,4 +1,4 @@
-const token: string  = 'token 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'
+const token: string | "" = localStorage.getItem("token");
 
 class GitService {
   
@@ -6,7 +6,7 @@ class GitService {
         return fetch(url, {
                 method: "GET",
                 headers: {
-                  Authorization: token,
+                  Authorization: `token ${token}`,
                 },
               })
     }
