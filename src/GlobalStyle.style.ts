@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
- 
+import { createGlobalStyle } from "styled-components";
+
 export const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
@@ -31,5 +31,20 @@ export const GlobalStyle = createGlobalStyle`
   textarea:focus,
   button:focus {
     outline: none;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
   }
 `;
