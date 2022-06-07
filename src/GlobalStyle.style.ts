@@ -13,8 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     width: 100%;
-    height: inherit;
-    margin: 0 auto;
+    height: 100%;
   }
   li {
     list-style: none;
@@ -32,19 +31,6 @@ export const GlobalStyle = createGlobalStyle`
   button:focus {
     outline: none;
   }
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+ 
+
 `;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GlobalStyle } from "../GlobalStyle.style";
-import GitService from "../service/githib";
+import GitService from "../../service/githib";
+import './Gist.css'
 
 type Gist = {
   id: string;
@@ -20,15 +20,7 @@ function Gists() {
 
   return (
     <div>
-      <GlobalStyle />
-      <table
-        style={{
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <table>
         <tbody>
           <tr>
             <th>NUMBER</th>

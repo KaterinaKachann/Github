@@ -1,27 +1,38 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./GlobalStyle.style";
-import Gists from "./pages/Gists";
-import Home from "./pages/Home";
-import Repo from "./pages/Repo";
-import PrivateRoute from "./component/PrivateRouter";
-import NotFoundPage from "./pages/NotFoundPage";
+import Gists from "./pages/Gists/Gists";
+import Home from "./pages/Home/Home";
+import Repo from "./pages/Repo/Repo";
+import PrivateRoute from "./component/privateRoute/PrivateRouter";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import Header from "./component/header/Header";
+import Footer from "./component/footer/Footer";
+import { Wrapper, Content } from "./App.styled";
+import Loading from "./component/Loading/Loading";
+import { initialState, reducer } from "./store/reducer/reducer";
 
 function App() {
+   let AppContext = createContext(null)
+   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
+    <AppContext.Provider value={{state, dispatch}}>
+    <Wrapper>
       <GlobalStyle />
-      <BrowserRouter>
+      <Header />
+      <Content>
         <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route element={<PrivateRoute />}>
-            <Route path="repos" element={<Repo />} />
+            <Route path="/repos" element={<Repo />} />
             <Route path="/gists" element={<Gists />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Content>
+      <Footer />
+    </Wrapper>
+    </AppContext.Provider>
   );
 }
 

@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { GlobalStyle } from "../GlobalStyle.style";
-import GitService from '../service/githib';
+
+import "./Repo.css";
+
+import GitService from "../../service/githib";
 
 type Repos = {
-    name: string;
-}
+  name: string;
+};
 
 function Repo() {
   const [repos, setRepos] = useState<Repos[]>([]);
-  
+
   useEffect(() => {
     let url = "https://api.github.com/user/repos";
     GitService.get(url)
       .then((res) => res.json())
       .then((json) => {
-        setRepos(json)
+        setRepos(json);
       });
   }, []);
 
   return (
     <div>
-      <GlobalStyle />
-      <table style={{ height: "100vh", display: "flex", justifyContent:"center", alignItems: 'center'}}>
+      <table>
         <tbody>
-        <tr>
+          <tr>
             <th>NUMBER</th>
             <th>NAME</th>
           </tr>
