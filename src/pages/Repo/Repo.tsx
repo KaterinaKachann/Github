@@ -1,42 +1,20 @@
-import React, { useEffect, useState } from "react";
-
-import "./Repo.css";
-
-import GitService from "../../service/githib";
-
-type Repos = {
-  name: string;
-};
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import { Wrap, Container, Button } from "./Repo.styled";
 
 function Repo() {
-  const [repos, setRepos] = useState<Repos[]>([]);
-
-  useEffect(() => {
-    let url = "https://api.github.com/user/repos";
-    GitService.get(url)
-      .then((res) => res.json())
-      .then((json) => {
-        setRepos(json);
-      });
-  }, []);
+  const { name } = useParams();
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <th>NUMBER</th>
-            <th>NAME</th>
-          </tr>
-          {repos.map((item, key) => (
-            <tr key={key}>
-              <td>{key + 1}.</td>
-              <td>{item.name}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Wrap>
+      <Container>
+        <h1>{name}</h1>
+        <Link to="/repos">
+          <Button>Back</Button>
+        </Link>
+      </Container>
+    </Wrap>
   );
 }
+
 export default Repo;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import GitService from "../../service/githib";
 import './Gist.css'
 
@@ -26,12 +27,14 @@ function Gists() {
             <th>NUMBER</th>
             <th>ID</th>
             <th>DESCRIPTION</th>
+            <th>LINK</th>
           </tr>
           {gists.map((item, key) => (
             <tr key={key}>
               <td>{key + 1}.</td>
               <td>{item.id}</td>
               <td>{item.description}</td>
+              <td><Link to="">Show</Link></td>
             </tr>
           ))}
         </tbody>
