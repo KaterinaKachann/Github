@@ -6,11 +6,26 @@ export const Button = styled.button`
   background-color: black;
   color: white;
   border-radius: 50px;
-  transition: .3s;
-  &:hover{
+  transition: 0.3s;
+  &:hover {
     background-color: grey;
   }
-  &:active{
+  &:active {
     background-color: lightgrey;
   }
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

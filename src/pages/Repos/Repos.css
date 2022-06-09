@@ -1,23 +1,71 @@
-.wrap{
+.wrap {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  height: 100%;
+
+  padding-top: 100px;
+  margin: 0 auto;
+  height: 400px;
+  width: 900px;
 }
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-    width: 80%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  
+
+.InfoUserImg {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+}
+.InfoUser {
+  padding-right: 26px;
+}
+.InfoUserName {
+  padding: 26px 0;
+}
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+.CardWrap {
+  border-color: hsla(210, 18%, 87%, 1);
+  border-bottom: 1px solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.CardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.InfoVisabel {
+  color: #57606a;
+  border: 1px solid #d0d7de;
+  border-radius: 2em;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+}
+a :hover{
+  text-decoration: underline;
+}
+.InfoLang{
+  color: #6e7781;
+  font-size: 12px;
+}
+.InfoBranch{
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+  color: #57606a;
+}

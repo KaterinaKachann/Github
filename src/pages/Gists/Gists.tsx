@@ -20,7 +20,7 @@ function Gists() {
   }, []);
 
   return (
-    <div>
+    <div className="wrap">
       <table>
         <tbody>
           <tr>
@@ -34,7 +34,7 @@ function Gists() {
               <td>{key + 1}.</td>
               <td>{item.id}</td>
               <td>{item.description}</td>
-              <td><Link to="">Show</Link></td>
+              <td><Link key={key} to={`${item.description}`}>Show</Link></td>
             </tr>
           ))}
         </tbody>
