@@ -1,14 +1,16 @@
-/* .wrap {
+.WrapNotFound {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-} */
-a {
+  padding-top: 100px;
+}
+.LinkNotFound {
   text-decoration: underline;
   transition: 0.3s;
+  color: black;
 }
-a:hover {
+.LinkNotFound:hover {
   color: grey;
 }

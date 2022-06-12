@@ -4,10 +4,10 @@ import "./NotFound.css";
 
 function NotFoundPage() {
   return (
-    <div className="wrap">
+    <div className="WrapNotFound">
       <h1>Not Found Page</h1>
       <Link to="/">
-        <a>Return to home page</a>
+        <p className="LinkNotFound">Return to home page</p>
       </Link>
     </div>
   );

@@ -26,7 +26,6 @@ function App() {
             <Route path="/gists" element={<Gists />} />
             <Route path="/gists/:description" element={<Gist />} />
           </Route>
-          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

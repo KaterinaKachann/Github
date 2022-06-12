@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginButton from "../Login/LoginButton";
 import "./Header.css";
 
 function HeaderComponent() {
+  
   return (
     <header>
       <div>
@@ -25,15 +27,20 @@ function HeaderComponent() {
 
       <div>
         <nav>
-          <Link to="/repos">
-            <p>Repos</p>
-          </Link>
-          <Link to="/gists">
-            <p>Gists</p>
-          </Link>
-          <Link to="/login">
-            <p>Log in</p>
-          </Link>
+          {localStorage.getItem("logout") == "false" ?  (
+            <>
+              <Link to="/repos">
+                <p>Repos</p>
+              </Link>
+              <Link to="/gists">
+                <p>Gists</p>
+              </Link>
+            </>
+          ): (
+            <>
+            <div></div></>
+          ) }
+          <LoginButton />
         </nav>
       </div>
     </header>

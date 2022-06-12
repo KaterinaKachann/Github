@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-button {
+.ButtonLogin {
   padding: 1rem;
   cursor: pointer;
   background-color: black;
@@ -12,10 +12,11 @@ button {
   border-radius: 50px;
   transition: 0.3s;
 }
-button:hover {
+.ButtonLogin:hover {
   background-color: grey;
+  color: black;
 }
-button:active {
+.ButtonLogin:active {
   background-color: lightgrey;
   color: black;
 }

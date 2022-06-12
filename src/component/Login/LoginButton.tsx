@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginButton.css";
 
 function LoginButton() {
@@ -18,20 +18,33 @@ function LoginButton() {
 
       fetch(`http://localhost:8000?code=${code}`)
         .then((res) => res.json())
-        .then((json) => localStorage.setItem("token", json.access_token));
+        .then((json) => {
+          localStorage.setItem("token", json.access_token);
+          localStorage.setItem("logout", "false");
+          location.reload();
+        });
     }
   });
+  const LogOut = () => {
+    localStorage.clear();
+    localStorage.setItem("logout", "true");
+    location.reload();
+  };
+
   return (
-    <div className="wrap">
-      <div className="container">
-        <h1>Authorized with GitHub</h1>
+    <>
+      {localStorage.getItem("logout") == "false" ? (
+        <button className="ButtonLogin" onClick={LogOut}>
+          Log Out of GitHub
+        </button>
+      ) : (
         <a
           href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
         >
-          <button>Sing in with GitHub</button>
+          <button className="ButtonLogin">Log in on GitHub</button>
         </a>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 

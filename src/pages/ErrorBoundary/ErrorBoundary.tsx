@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './ErrorBoundary.css'
 
 
-function NotFoundPage() {
+function ErrorBoundary() {
     const navigate = useNavigate();
   return (
     <div className="wrap">
@@ -14,4 +14,4 @@ function NotFoundPage() {
   );
 }
 
-export default NotFoundPage;
+export default ErrorBoundary;
