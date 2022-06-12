@@ -1,19 +1,19 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { Wrap, Container, Button } from "./Gist.styled";
+import './Gist.css'
 
 function Gist() {
   const { description } = useParams();
 
   return (
-    <Wrap>
-      <Container>
+    <div className="wrap">
+      <div className="container">
         <h1>{description}</h1>
         <Link to="/gists">
-          <Button>Back</Button>
+          <button>Back</button>
         </Link>
-      </Container>
-    </Wrap>
+      </div>
+    </div>
   );
 }
 

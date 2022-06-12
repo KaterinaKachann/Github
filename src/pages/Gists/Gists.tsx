@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GitService from "../../service/githib";
 import './Gist.css'
+import { Gist } from "../../api/types";
 
-type Gist = {
-  id: string;
-  description: string;
-};
+
 
 function Gists() {
   let url = "https://api.github.com/gists";

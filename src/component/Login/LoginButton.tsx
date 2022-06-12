@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Wrap, Container } from "./LoginButton.styled";
+import "./LoginButton.css";
 
 function LoginButton() {
   const client_id: string = "e86051972558ac68b5a8";
@@ -22,16 +22,16 @@ function LoginButton() {
     }
   });
   return (
-    <Wrap>
-      <Container>
+    <div className="wrap">
+      <div className="container">
         <h1>Authorized with GitHub</h1>
         <a
           href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
         >
-          <Button>Sing in with GitHub</Button>
+          <button>Sing in with GitHub</button>
         </a>
-      </Container>
-    </Wrap>
+      </div>
+    </div>
   );
 }
 

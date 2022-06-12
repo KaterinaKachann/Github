@@ -1,0 +1,42 @@
+header {
+  height: 80px;
+  background-color: #24292f;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 100;
+  color: white;
+}
+p:hover {
+  color: grey;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 1em;
+  border-radius: 30px;
+  color: white;
+  transition: 0.3s;
+}
+button:hover {
+  border-color: grey;
+  color: grey;
+}
+button:active {
+  border-color: lightgrey;
+  color: lightgrey;
+}

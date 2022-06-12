@@ -1,0 +1,16 @@
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-top: 100px;
+  margin: 0 auto;
+  height: 400px;
+  width: 900px;
+}
+
+img{
+  width: 400px;
+  height: 50%;
+}

@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Wrap, LinkText } from "./ErrorBoundary.styled";
+import './ErrorBoundary.css'
 
 
 function NotFoundPage() {
     const navigate = useNavigate();
   return (
-    <Wrap>
+    <div className="wrap">
       <button onClick={() => navigate(-1)}>
-        <LinkText>Return to home page</LinkText>
+        <a>Return to home page</a>
       </button>
-    </Wrap>
+    </div>
   );
 }
 

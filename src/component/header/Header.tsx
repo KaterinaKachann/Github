@@ -1,12 +1,10 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ActionKind, reducer } from "../../store/reducer/reducer";
-import { Header, Title, NavLink, Button, NavMenu } from "./Header.styled";
+import "./Header.css";
 
 function HeaderComponent() {
-  const [state, dispatch] = useReducer(reducer, { isLogin: false });
   return (
-    <Header>
+    <header>
       <div>
         <Link to="/">
           <svg
@@ -26,19 +24,19 @@ function HeaderComponent() {
       </div>
 
       <div>
-        <NavMenu>
+        <nav>
           <Link to="/repos">
-            <NavLink>Repos</NavLink>
+            <p>Repos</p>
           </Link>
           <Link to="/gists">
-            <NavLink>Gists</NavLink>
+            <p>Gists</p>
           </Link>
           <Link to="/login">
-            <Button>Log in</Button>
+            <p>Log in</p>
           </Link>
-        </NavMenu>
+        </nav>
       </div>
-    </Header>
+    </header>
   );
 }
 export default HeaderComponent;

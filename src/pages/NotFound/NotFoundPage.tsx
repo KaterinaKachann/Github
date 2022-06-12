@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Wrap, LinkText } from "./NotFound.styled";
+import "./NotFound.css";
 
 function NotFoundPage() {
   return (
-    <Wrap>
+    <div className="wrap">
       <h1>Not Found Page</h1>
       <Link to="/">
-        <LinkText>Return to home page</LinkText>
+        <a>Return to home page</a>
       </Link>
-    </Wrap>
+    </div>
   );
 }
 

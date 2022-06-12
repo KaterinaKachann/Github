@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import GitService from "../../service/githib";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import "./Repo.css"
+import "./Repo.css";
+import { File } from '../../api/types';
 
-interface File {
-  path: string;
-}
+
 function Repo() {
   const { name } = useParams();
 
   const [file, setFile] = useState<File[]>([]);
   let owner = localStorage.getItem("userName");
-  let repo = window.location.href.split("repos/")[1];
+  let branch = window.location.href.split("?default_branch=")[1];
+  let repo =  window.location.href.split("repos/")[1];
+
+  console.log(repo);
 
   useEffect(() => {
-    let url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`;
+    let url = `https://api.github.com/repos/${owner}/${repo.split("?default_branch")[0]}/git/trees/${branch}?recursive=1`;
 
     GitService.get(url)
-
       .then((res) => res.json())
       .then((json) => {
-       setFile(json.tree);
-      })
+        setFile(json.tree);
+      });
   }, []);
-  console.log(file);
+
   return (
     <div className="wrap">
       <div className="contaner">
