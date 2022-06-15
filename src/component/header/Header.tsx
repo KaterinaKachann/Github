@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "../Login/LoginButton";
-import Search from "../Search/Search";
 import "./Header.scss";
 
 function HeaderComponent() {
