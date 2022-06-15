@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LoginButton from "../Login/LoginButton";
-import "./Header.scss";
+import LoginButton from "../login/loginButton";
+import "./header.scss";
 
 function HeaderComponent() {
   return (

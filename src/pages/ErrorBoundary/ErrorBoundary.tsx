@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './ErrorBoundary.css'
+import './errorBoundary.css'
 
 
 function ErrorBoundary() {

@@ -5,8 +5,8 @@ import GitService from "../../service/githib";
 
 import { ReposData, Owner } from "../../api/types";
 
-import "./Repos.scss";
-import Loading from "../../component/Loading/Loading";
+import "./repositories.scss";
+import Loading from "../../component/loading/loading";
 
 function Repos() {
   const [repos, setRepos] = useState<ReposData[]>([]);

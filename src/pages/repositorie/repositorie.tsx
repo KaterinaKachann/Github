@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import GitService from "../../service/githib";
-import "./Repo.scss";
+import "./repositorie.scss";
 import { File } from "../../api/types";
 
 function Repo() {

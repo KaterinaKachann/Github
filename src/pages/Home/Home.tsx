@@ -1,6 +1,6 @@
 import React from "react";
 import Cat from "../../assets/female.png";
-import "./Home.scss";
+import "./home.scss";
 
 function Home() {
   return (

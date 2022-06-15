@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./LoginButton.scss";
+import "./loginButton.scss";
 
 function LoginButton() {
   const client_id: string = "e86051972558ac68b5a8";
