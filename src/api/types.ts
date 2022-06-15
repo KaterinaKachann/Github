@@ -5,6 +5,7 @@ export interface Gist {
 
 export interface File {
   path: string;
+  size: string;
 }
 
 export interface ReposData {

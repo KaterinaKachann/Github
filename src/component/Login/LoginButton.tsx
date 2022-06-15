@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./LoginButton.css";
+import React, { useEffect } from "react";
+import "./LoginButton.scss";
 
 function LoginButton() {
   const client_id: string = "e86051972558ac68b5a8";
   const client_secret: string = "653e710d96581d947159bcf5063015aa105f759d";
   const redirect_uri: string = "http://localhost:3000";
+
+
+  const LogOut = () => {
+    localStorage.clear();
+    localStorage.setItem("logout", "true");
+    location.reload();
+  };
+
 
   useEffect(() => {
     const url = window.location.href;
@@ -25,11 +33,6 @@ function LoginButton() {
         });
     }
   });
-  const LogOut = () => {
-    localStorage.clear();
-    localStorage.setItem("logout", "true");
-    location.reload();
-  };
 
   return (
     <>

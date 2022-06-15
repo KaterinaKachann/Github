@@ -1,0 +1,22 @@
+header {
+  height: 80px;
+  background-color: #24292f;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    .LinkText {
+      font-size: 18px;
+      font-weight: 100;
+      color: white;
+    }
+    .LinkText:hover {
+      color: grey;
+    }
+  }
+}

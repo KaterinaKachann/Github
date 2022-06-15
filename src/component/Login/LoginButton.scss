@@ -1,0 +1,16 @@
+.ButtonLogin {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  transition: 0.3s;
+  &:hover {
+    background-color: grey;
+    color: black;
+  }
+  &:active {
+    background-color: lightgrey;
+    color: black;
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "../Login/LoginButton";
-import "./Header.css";
+import Search from "../Search/Search";
+import "./Header.scss";
 
 function HeaderComponent() {
-  
   return (
     <header>
       <div>
@@ -27,19 +27,17 @@ function HeaderComponent() {
 
       <div>
         <nav>
-          {localStorage.getItem("logout") == "false" ?  (
+          {localStorage.getItem("logout") == "false" ? (
             <>
               <Link to="/repos">
-                <p>Repos</p>
-              </Link>
-              <Link to="/gists">
-                <p>Gists</p>
+                <p className="LinkText">Repos</p>
               </Link>
             </>
-          ): (
+          ) : (
             <>
-            <div></div></>
-          ) }
+              <div></div>
+            </>
+          )}
           <LoginButton />
         </nav>
       </div>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import GitService from "../../service/githib";
-import "./Repo.css";
-import { File } from '../../api/types';
-
+import "./Repo.scss";
+import { File } from "../../api/types";
 
 function Repo() {
   const { name } = useParams();
@@ -11,12 +10,12 @@ function Repo() {
   const [file, setFile] = useState<File[]>([]);
   let owner = localStorage.getItem("userName");
   let branch = window.location.href.split("?default_branch=")[1];
-  let repo =  window.location.href.split("repos/")[1];
-
-  console.log(repo);
+  let repo = window.location.href.split("repos/")[1];
 
   useEffect(() => {
-    let url = `https://api.github.com/repos/${owner}/${repo.split("?default_branch")[0]}/git/trees/${branch}?recursive=1`;
+    let url = `https://api.github.com/repos/${owner}/${
+      repo.split("?default_branch")[0]
+    }/git/trees/${branch}?recursive=1`;
 
     GitService.get(url)
       .then((res) => res.json())
@@ -26,30 +25,25 @@ function Repo() {
   }, []);
 
   return (
-    <div className="wrap">
-      <div className="contaner">
-        <div className="TitleRepo">
-          <h1>{name}</h1>
-          <Link to="/repos">
-            <button className="ButtonBack">Back</button>
-          </Link>
-        </div>
-        <div>
-          <table>
-            <tbody>
-              <tr>
-                <th>NUMBER</th>
-                <th>PATH</th>
+    <div className="wrapper-repo">
+      <div className="TitleRepo">
+        <p className="BranchName">{branch}</p>
+        <h2>{name}</h2>
+        <Link to="/repos">
+          <button className="ButtonBack">Back</button>
+        </Link>
+      </div>
+      <div>
+        <table>
+          <tbody>
+            {file.map((item, key) => (
+              <tr key={key}>
+                <td>{item.path}</td>
+                <td>{item.size}</td>
               </tr>
-              {file.map((item, key) => (
-                <tr key={key}>
-                  <td>{key + 1}.</td>
-                  <td>{item.path}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+.wrapper-repo {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  .TitleRepo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .BranchName {
+    color: #24292f;
+    background-color: #f6f8fa;
+    border-color: rgba(27, 31, 36, 0.15);
+    box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    padding: 5px 16px;
+    border: 1px solid;
+    border-radius: 6px;
+  }
+  .ButtonBack {
+    color: #24292f;
+    background-color: #f6f8fa;
+    border-color: rgba(27, 31, 36, 0.15);
+    box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    padding: 5px 16px;
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .ButtonBack:hover {
+    background-color: #d0d7de;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}
