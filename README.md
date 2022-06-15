@@ -1,6 +1,7 @@
-# Github
 
+# GitHub Clone
 
-e86051972558ac68b5a8
-
-653e710d96581d947159bcf5063015aa105f759d
+## Local launch
+1. Do a git clone of the repository
+2. Launch the frontend part of the application ```npm run start```
+3. Go to the server folder and run the backend part of the application```node index.js```
