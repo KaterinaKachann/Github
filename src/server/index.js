@@ -10,7 +10,7 @@ const requestListener = function (req, res) {
   if (code) {
     const client_id = "e86051972558ac68b5a8";
     const client_secret = "653e710d96581d947159bcf5063015aa105f759d";
-    const redirect_uri = "https://main--github-test-project.netlify.app/auth";
+    const redirect_uri = "https://main--github-test-project.netlify.app";
 
     request.post({
         url: `https://github.com/login/oauth/access_token?client_id=${client_id}&client_secret=${client_secret}&code=${code}&redirect_uri=${redirect_uri}`,
