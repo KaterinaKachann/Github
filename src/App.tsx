@@ -23,7 +23,7 @@ function App() {
             <Route path="/repos/:name" element={<Repo />} />
             
           </Route>
-          <Route path="auth" element={<Auth />}/>
+          <Route path="/auth" element={<Auth />}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
