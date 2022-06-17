@@ -7,6 +7,7 @@ import Repo from "./pages/repositorie/repositorie";
 import PrivateRoute from "./component/privateRoute/privateRouter";
 import NotFoundPage from "./pages/notFound/notFoundPage";
 import Header from "./component/header/header";
+import Auth from "./component/auth/auth";
 
 import "./GlobalStyle.css";
 
@@ -20,7 +21,9 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/repos" element={<Repos />} />
             <Route path="/repos/:name" element={<Repo />} />
+            
           </Route>
+          <Route path="auth" element={<Auth />}/>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
