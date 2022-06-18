@@ -7,7 +7,7 @@ function NotFoundPage() {
     <div className="WrapNotFound">
       <h1>Not Found Page</h1>
       <Link to="/">
-        <p className="LinkNotFound">Return to home page</p>
+        <p className="LinkNotFound">Return to home page -&gt;</p>
       </Link>
     </div>
   );
