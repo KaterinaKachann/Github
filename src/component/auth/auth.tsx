@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
 function auth() {
-    return (
-        <div>
-            Auth
-        </div>
-    );
+  const url = window.location.href;
+  console.log(url);
+  return <div>Auth</div>;
 }
 
 export default auth;

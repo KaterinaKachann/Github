@@ -27,6 +27,7 @@ function LoginButton() {
       fetch(`https://main--github-test-project.netlify.app/auth?code=${code}`)
         .then((res) => res.json())
         .then((json) => {
+          console.log(json);
           localStorage.setItem("token", json.access_token);
           localStorage.setItem("logout", "false");
           location.reload();
