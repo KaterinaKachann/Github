@@ -3,8 +3,7 @@ import "./loginButton.scss";
 
 function LoginButton() {
   const client_id: string = "e86051972558ac68b5a8";
-  const client_secret: string = "653e710d96581d947159bcf5063015aa105f759d";
-  const redirect_uri: string = "https://main--github-test-project.netlify.app/auth";
+  const redirect_uri: string = "http://localhost:3000";
 
 
   const LogOut = () => {
@@ -24,7 +23,7 @@ function LoginButton() {
 
       const code = newUrl[1];
 
-      fetch(`https://main--github-test-project.netlify.app/auth?code=${code}`)
+      fetch(`http://localhost:8000?code=${code}`)
         .then((res) => res.json())
         .then((json) => {
           console.log(json);
